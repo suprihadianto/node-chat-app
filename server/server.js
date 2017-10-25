@@ -18,10 +18,16 @@ io.on('connection', (socket) => {
 
     // Emit event
    socket.emit('newMessage', {
-        from: 'Supri@gmail.com',
-        text: 'Hey!.. How are you',
-        createAt: new Date().toLocaleString()
+        from: 'Admin',
+        text: 'Welcome node the chat app',
+        createAt: new Date().getTime().toLocaleString()
    });
+   socket.broadcast.emit('newMessage', {
+    from: 'Admin',
+    text: 'New user joined',
+    createAt: new Date().getTime().toLocaleString()
+});
+   
 
    socket.on('createMessage', (message) => {
         console.log('createMessage', message);
@@ -30,6 +36,11 @@ io.on('connection', (socket) => {
             text: message.text,
             createAt: new Date().getTime()
         });
+//         socket.broadcast.emit('newMessage', {
+//             from: message.from,
+//             text: message.text,
+//             createAt: new Date().getDate()
+//         });
    });
 
     socket.on('disconnect', () => {
