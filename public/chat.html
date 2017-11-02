@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Node Chat App</title>
 </head>
+
 <body class="chat">
 
     <div class="chat__sidebar">
@@ -16,17 +18,17 @@
 
     <div class="chat__main">
         <ol id="messages" class="chat__messages"></ol>
-        
+
         <div class="chat__footer">
             <form action="" id="message-form">
                 <input type="text" name="message" placeholder="Message" autofocus autocomplete="off">
                 <button>Send</button>
             </form>
-                <button id="send-location">Send location</button>
+            <button id="send-location">Send location</button>
         </div>
-        
+
     </div>
-    
+
     <script id="message-template" type="text/template">
         <li class="message">
             <div class="message__title">
@@ -60,4 +62,5 @@
     <script src="/js/libs/deparam.js"></script>
     <script src="/js/chat.js"></script>
 </body>
+
 </html>
